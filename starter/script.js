@@ -11,7 +11,9 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -48,3 +50,7 @@ console.log(first, second);
 //Switching variables with destructure
 [first, second] = [second, first];
 console.log(first, second);
+
+//receive 2 return value from a function
+const [stater, main] = restaurant.order(2, 0);
+console.log(stater, main);
