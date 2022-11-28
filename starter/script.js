@@ -54,3 +54,13 @@ console.log(first, second);
 //receive 2 return value from a function
 const [stater, main] = restaurant.order(2, 0);
 console.log(stater, main);
+
+//Nested destructuring
+const nested = [5, 2, [5, 9]];
+// const [i, , j] = nested;
+const [i, , [j, k]] = nested;
+console.log(i, j, k);
+
+//default values
+const [p = 2, q = 5, r = 3] = [5, 6];
+console.log(p, q, r);
