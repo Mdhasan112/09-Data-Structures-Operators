@@ -30,6 +30,9 @@ const restaurant = {
   },
 };
 
+/*
+//Array destructuring
+
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -38,7 +41,7 @@ const c = arr[2];
 const [x, y, z] = arr;
 console.log(x, y, z);
 
-let [first, second] = restaurant.categories;
+let [first, second, ten] = restaurant.categories;
 console.log(first, second);
 
 // // Switching variables without destructure
@@ -64,3 +67,33 @@ console.log(i, j, k);
 //default values
 const [p = 2, q = 5, r = 3] = [5, 6];
 console.log(p, q, r);
+*/
+
+//Object destructuring
+
+const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hour,
+  categories: tags,
+} = restaurant;
+console.log(restaurantName, hour, tags);
+
+const { menu = [], starterMenu: starter = [] } = restaurant;
+console.log(menu, starter);
+
+//mutating variables
+let a = 1990;
+let b = 2000;
+
+const obj = { a: 10, b: 20, c: 30 };
+({ a, b } = obj);
+console.log(a, b);
+
+//nested objected
+const {
+  fri: { open: k, close: l },
+} = openingHours;
+console.log(k, l);
