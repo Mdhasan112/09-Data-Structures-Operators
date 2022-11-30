@@ -14,6 +14,16 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({
+    time = '22:30',
+    address,
+    mainIndex = 0,
+    starterIndex = 1,
+  }) {
+    console.log(
+      `${starterIndex} and ${mainIndex} will be delivered to ${address} at ${time}`
+    );
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -97,3 +107,15 @@ const {
   fri: { open: k, close: l },
 } = openingHours;
 console.log(k, l);
+
+restaurant.orderDelivery({
+  time: '2:30',
+  address: 'Gulshan, Dhaka-1212',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'Gulshan, Dhaka-1212',
+  starterIndex: 1,
+});
