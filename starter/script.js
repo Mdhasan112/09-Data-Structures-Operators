@@ -17,11 +17,11 @@ const restaurant = {
   orderDelivery: function ({
     time = '22:30',
     address,
-    mainIndex = 0,
-    starterIndex = 1,
+    mainIndex = 2,
+    starterIndex = 2,
   }) {
     console.log(
-      `${starterIndex} and ${mainIndex} will be delivered to ${address} at ${time}`
+      `Ordered received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
   openingHours: {
