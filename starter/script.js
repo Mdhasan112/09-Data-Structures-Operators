@@ -43,7 +43,7 @@ const restaurant = {
   },
 };
 
-/*//////////////////////////////////
+/*/////////////////////////////////////
 //Array destructuring
 
 const arr = [2, 3, 4];
@@ -80,9 +80,9 @@ console.log(i, j, k);
 //default values
 const [p = 2, q = 5, r = 3] = [5, 6];
 console.log(p, q, r);
-*/ ///////////////////////////////
+*/ ////////////////////////////////////
 
-/*///////////////////////////////
+/*////////////////////////////////////
 //Object destructuring
 
 const { name, openingHours, categories } = restaurant;
@@ -123,8 +123,9 @@ restaurant.orderDelivery({
   address: 'Gulshan, Dhaka-1212',
   starterIndex: 1,
 });
-*/ ///////////////////////////////////
+*/ //////////////////////////////////////
 
+/*///////////////////////////////////////
 //The Spread Operator (...)
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
@@ -161,3 +162,9 @@ restaurant.orderPasta(...ingredients);
 //objects
 const newRestaurant = { founder: 'Jonas', ...restaurant, born: '1990' };
 console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Jonas';
+console.log(restaurantCopy);
+console.log(restaurant);
+*/ ///////////////////////////////////
