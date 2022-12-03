@@ -212,3 +212,34 @@ add(...x);
 
 restaurant.orderPizza('Mushrooms', 'Onion', 'Olives');
 */
+
+///////////////////////////////////////////
+console.log('----OR----');
+//Use any data type,  return any data type, short-circuiting
+console.log(3 || 'jonas');
+console.log('' || 'jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || '' || 0 || 'jonas' || 25 || null);
+
+// restaurant.numGuest = 10;
+const guest1 = restaurant.numGuest ? restaurant.numGuest : 30;
+console.log(guest1);
+
+const guest2 = restaurant.numGuest || 20;
+console.log(guest2);
+
+console.log('----AND----');
+console.log(0 && 'jonas');
+console.log(5 && 'jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+//Practical Example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('Mushroom', 'Spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
+////////////////////////////////////////
