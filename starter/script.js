@@ -27,6 +27,10 @@ const restaurant = {
   orderPasta: function (ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta ${ing1}, ${ing2}, and ${ing3}`);
   },
+  orderPizza: function (mainIngredients, ...OtherIngredients) {
+    console.log(mainIngredients);
+    console.log(OtherIngredients);
+  },
   openingHours: {
     thu: {
       open: 12,
@@ -168,3 +172,43 @@ restaurantCopy.name = 'Jonas';
 console.log(restaurantCopy);
 console.log(restaurant);
 */ ///////////////////////////////////
+
+/*/////////////////////////////////////
+//Rest Pattern and Parameter
+// 1) Destructuring
+
+//SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+//REST, because of LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , Risotto, ...othersFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+]; //rest element must be the last element
+
+console.log(pizza, Risotto, othersFood);
+console.log(...restaurant.mainMenu, ...restaurant.starterMenu);
+
+//Object
+const { sat, ...weekDay } = { ...restaurant.openingHours };
+console.log(weekDay);
+
+// 2) Functions
+let sum = 0;
+const add = function (...numbers) {
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+add(2, 5);
+add(3, 7, 2);
+add(4, 1, 5, 7, 8);
+
+const x = [25, 10, 8];
+add(...x);
+
+restaurant.orderPizza('Mushrooms', 'Onion', 'Olives');
+*/
