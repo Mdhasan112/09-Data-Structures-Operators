@@ -213,6 +213,7 @@ add(...x);
 restaurant.orderPizza('Mushrooms', 'Onion', 'Olives');
 */
 
+/*
 ///////////////////////////////////////////
 console.log('----OR----');
 //Use any data type,  return any data type, short-circuiting
@@ -243,3 +244,4 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
 ////////////////////////////////////////
+*/
