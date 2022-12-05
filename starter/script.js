@@ -245,3 +245,7 @@ if (restaurant.orderPizza) {
 restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
 ////////////////////////////////////////
 */
+
+//Nullish: undefined or null (NOT 0 or '')
+const guestCorrect = restaurant.numGuest ?? 30;
+console.log(guestCorrect);
