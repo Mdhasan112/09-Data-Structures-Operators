@@ -246,6 +246,43 @@ restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
 ////////////////////////////////////////
 */
 
+/*/////////////////////////////////////
+restaurant.numGuest = 0;
+const guest1 = restaurant.numGuest || 30;
+console.log(guest1);
+
 //Nullish: undefined or null (NOT 0 or '')
 const guestCorrect = restaurant.numGuest ?? 30;
 console.log(guestCorrect);
+*/ /////////////////////////////////////
+
+/*/////////////////////////////////////
+const rest1 = {
+  name: 'Capri',
+  numGuest: 20,
+};
+
+const rest2 = {
+  name: 'La Piazza',
+  Owner: 'David Warner',
+};
+
+//OR Assignment Operator
+// rest1.numGuest = rest1.numGuest || 10;
+// rest2.numGuest = rest2.numGuest || 10;
+// rest1.numGuest ||= 10;
+// rest2.numGuest ||= 10;
+
+//Nullish assignment Operator (null or undefined)
+rest2.numGuest ??= 10;
+rest2.numGuest ??= 10;
+
+//AND assignment Operator
+// rest1.Owner = rest1.Owner && '<hk>';
+// rest2.Owner = rest2.Owner && '<hk>';
+rest1.Owner &&= '<hk>';
+rest2.Owner &&= '<hk>';
+
+console.log(rest1);
+console.log(rest2);
+*/ ////////////////////////////////////
