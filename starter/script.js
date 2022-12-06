@@ -1,8 +1,26 @@
 'use strict';
 
 // Data needed for a later exercise
+
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
 
 // Data needed for first part of the section
 const restaurant = {
@@ -11,40 +29,23 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
-  orderDelivery: function ({
-    time = '22:30',
-    address,
-    mainIndex = 2,
-    starterIndex = 2,
-  }) {
+  orderDelivery({ time = '22:30', address, mainIndex = 2, starterIndex = 2 }) {
     console.log(
       `Ordered received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(`Here is your delicious pasta ${ing1}, ${ing2}, and ${ing3}`);
   },
-  orderPizza: function (mainIngredients, ...OtherIngredients) {
+  orderPizza(mainIngredients, ...OtherIngredients) {
     console.log(mainIngredients);
     console.log(OtherIngredients);
   },
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //ES6 enhanced object literals
+  openingHours,
 };
 
 /*/////////////////////////////////////
@@ -285,11 +286,10 @@ rest2.Owner &&= '<hk>';
 
 console.log(rest1);
 console.log(rest2);
-*/ ////////////////////////////////////
+*/ //////////////////////////////////////
 
 /*///////////////////////////////////////
 // Coding Challenge #1
-
 
 We're building a football betting app (soccer for my American friends 😅)!
 Suppose we get data from a web service about a certain game (below). In this challenge we're gonna work with the data. So here are your tasks:
@@ -301,7 +301,6 @@ Suppose we get data from a web service about a certain game (below). In this cha
 6. Write a function ('printGoals') that receives an arbitrary number of player names (NOT an array) and prints each of them to the console, along with the number of goals that were scored in total (number of player names passed in)
 7. The team with the lower odd is more likely to win. Print to the console which team is more likely to win, WITHOUT using an if/else statement or the ternary operator.
 TEST DATA FOR 6: Use players 'Davies', 'Muller', 'Lewandowski' and 'Kimmich'. Then, call the function again with players from game.scored
-
 
 const game = {
   team1: 'Bayern Munich',
@@ -352,3 +351,15 @@ printGoals(...game.scored);
 //7
 team1 < team2 && console.log('team 1 is more likely to win');
 */ ///////////////////////////////////////
+
+/*////////////////////////////////////////
+//looping arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) console.log(item);
+console.log(menu);
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1} : ${item[1]}`);
+}
+console.log(...menu.entries());
+*/ /////////////////////////////////////////
