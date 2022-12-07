@@ -363,3 +363,74 @@ for (const item of menu.entries()) {
 }
 console.log(...menu.entries());
 */ /////////////////////////////////////////
+
+/*//////////////////////////////////////////
+if (restaurant.openingHours && restaurant.openingHours.mon) {
+  console.log(restaurant.openingHours.mon.open);
+}
+
+//with optional chaining
+console.log(restaurant.openingHours.mon?.open);
+console.log(restaurant.openingHours?.mon?.open);
+
+//Example
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'closed';
+  console.log(`on ${day}, we open at ${open}`);
+}
+*/ ////////////////////////////////////////
+
+/*/////////////////////////////////////////
+//property NAME
+const properties = Object.keys(openingHours);
+console.log(properties);
+let openStr = `we are open on ${properties.length} days`;
+
+for (const day of properties) {
+  openStr += ` ${day}`;
+  console.log(openStr);
+}
+
+//property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+//Entire Object
+const entries = Object.entries(openingHours);
+console.log(entries);
+*/ ///////////////////////////////////////
+
+/*///////////////////////////////////
+//remove duplicate
+let arr = [2, 5, 2, 7, 7, 3, 15, 19];
+let arr2 = [];
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(arr[i]);
+  if (arr2.indexOf(arr[i]) === -1 && arr[i] <= 7) {
+    arr2.push(arr[i]);
+  } else if (arr[i] > 7) {
+    arr2.push(arr[i]);
+  }
+}
+
+console.log(arr2);
+*/ ///////////////////////////////////
+
+////////////////////////////////////////
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Burger',
+  'Pizza',
+  'Pasta',
+]);
+console.log(orderSet);
+console.log(orderSet.has('Pasta'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Fish');
+orderSet.add('Fish');
+orderSet.delete('Burger');
+console.log(orderSet);
