@@ -48,7 +48,8 @@ const restaurant = {
   openingHours,
 };
 
-/*/////////////////////////////////////
+/*
+/////////////////////////////////////
 //Array destructuring
 
 const arr = [2, 3, 4];
@@ -85,9 +86,11 @@ console.log(i, j, k);
 //default values
 const [p = 2, q = 5, r = 3] = [5, 6];
 console.log(p, q, r);
-*/ ////////////////////////////////////
+////////////////////////////////////
+/*
 
-/*////////////////////////////////////
+/*
+////////////////////////////////////
 //Object destructuring
 
 const { name, openingHours, categories } = restaurant;
@@ -128,9 +131,11 @@ restaurant.orderDelivery({
   address: 'Gulshan, Dhaka-1212',
   starterIndex: 1,
 });
-*/ //////////////////////////////////////
+////////////////////////////////////////
+*/
 
-/*///////////////////////////////////////
+/*
+///////////////////////////////////////
 //The Spread Operator (...)
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
@@ -172,9 +177,11 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Jonas';
 console.log(restaurantCopy);
 console.log(restaurant);
-*/ ///////////////////////////////////
+/////////////////////////////////////
+*/
 
-/*/////////////////////////////////////
+/*
+/////////////////////////////////////
 //Rest Pattern and Parameter
 // 1) Destructuring
 
@@ -212,6 +219,7 @@ const x = [25, 10, 8];
 add(...x);
 
 restaurant.orderPizza('Mushrooms', 'Onion', 'Olives');
+///////////////////////////////////////////
 */
 
 /*
@@ -244,10 +252,11 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('Mushroom', 'Spinach');
-////////////////////////////////////////
+///////////////////////////////////////
 */
 
-/*/////////////////////////////////////
+/*
+//////////////////////////////////////
 restaurant.numGuest = 0;
 const guest1 = restaurant.numGuest || 30;
 console.log(guest1);
@@ -255,9 +264,11 @@ console.log(guest1);
 //Nullish: undefined or null (NOT 0 or '')
 const guestCorrect = restaurant.numGuest ?? 30;
 console.log(guestCorrect);
-*/ /////////////////////////////////////
+/////////////////////////////////////
+*/
 
-/*/////////////////////////////////////
+/*
+/////////////////////////////////////
 const rest1 = {
   name: 'Capri',
   numGuest: 20,
@@ -286,9 +297,11 @@ rest2.Owner &&= '<hk>';
 
 console.log(rest1);
 console.log(rest2);
-*/ //////////////////////////////////////
+///////////////////////////////////////
+*/
 
-/*///////////////////////////////////////
+/*
+///////////////////////////////////////
 // Coding Challenge #1
 
 We're building a football betting app (soccer for my American friends 😅)!
@@ -350,9 +363,11 @@ printGoals(...game.scored);
 
 //7
 team1 < team2 && console.log('team 1 is more likely to win');
-*/ ///////////////////////////////////////
+///////////////////////////////////////
+*/
 
-/*////////////////////////////////////////
+/*
+////////////////////////////////////////
 //looping arrays
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
@@ -362,9 +377,11 @@ for (const item of menu.entries()) {
   console.log(`${item[0] + 1} : ${item[1]}`);
 }
 console.log(...menu.entries());
-*/ /////////////////////////////////////////
+/////////////////////////////////////////
+*/
 
-/*//////////////////////////////////////////
+/*
+//////////////////////////////////////////
 if (restaurant.openingHours && restaurant.openingHours.mon) {
   console.log(restaurant.openingHours.mon.open);
 }
@@ -379,9 +396,11 @@ for (const day of days) {
   const open = restaurant.openingHours[day]?.open ?? 'closed';
   console.log(`on ${day}, we open at ${open}`);
 }
-*/ ////////////////////////////////////////
+/////////////////////////////////////////
+*/
 
-/*/////////////////////////////////////////
+/*
+/////////////////////////////////////////
 //property NAME
 const properties = Object.keys(openingHours);
 console.log(properties);
@@ -399,9 +418,11 @@ console.log(values);
 //Entire Object
 const entries = Object.entries(openingHours);
 console.log(entries);
-*/ ///////////////////////////////////////
+ /////////////////////////////////////
+*/
 
-/*///////////////////////////////////
+/*
+/////////////////////////////////////
 //remove duplicate
 let arr = [2, 5, 2, 7, 7, 3, 15, 19];
 let arr2 = [];
@@ -416,9 +437,11 @@ for (let i = 0; i < arr.length; i++) {
 }
 
 console.log(arr2);
-*/ ///////////////////////////////////
+//////////////////////////////////////
+*/
 
-////////////////////////////////////////
+/*
+//////////////////////////////////////
 const orderSet = new Set([
   'Pasta',
   'Pizza',
@@ -434,3 +457,28 @@ orderSet.add('Fish');
 orderSet.add('Fish');
 orderSet.delete('Burger');
 console.log(orderSet);
+for (const order of orderSet) console.log(order);
+
+const staff = ['Waiter', 'Chef', 'Chef', 'Waiter', 'Manager'];
+const newStaff = [...new Set(staff)];
+console.log(newStaff);
+console.log(new Set('mdhasankhan').size);
+/////////////////////////////////////////
+*/
+const rest = new Map();
+rest.set('name', 'Italiane');
+rest.set(1, 'France, Italy');
+console.log(rest.set(2, 'Lisbon, Portugal'));
+
+rest
+  .set('catagories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('closed', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
+
+console.log(rest.get(true));
+console.log(rest.get('catagories'));
+
+const time = 15;
+console.log(rest.get(time > rest.get('open') && time < rest.get('closed')));
