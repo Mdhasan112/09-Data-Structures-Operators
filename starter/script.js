@@ -465,6 +465,9 @@ console.log(newStaff);
 console.log(new Set('mdhasankhan').size);
 /////////////////////////////////////////
 */
+
+/*
+/////////////////////////////////////////
 const rest = new Map();
 rest.set('name', 'Italiane');
 rest.set(1, 'France, Italy');
@@ -482,3 +485,15 @@ console.log(rest.get('catagories'));
 
 const time = 15;
 console.log(rest.get(time > rest.get('open') && time < rest.get('closed')));
+
+console.log(rest.has('catagories'));
+rest.delete(2);
+console.log(rest);
+// rest.clear();
+const arr = [50, 5];
+rest.set(document.querySelector('h1'), 'heading');
+rest.set(arr, 'test');
+console.log(rest);
+console.log(rest.get(arr));
+////////////////////////////////////////
+*/
