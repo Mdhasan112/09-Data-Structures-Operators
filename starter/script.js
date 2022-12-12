@@ -587,3 +587,45 @@ for (const [min, event] of gameEvents) {
 }
 //////////////////////////////////////////
 */
+
+/*
+/////////////////////////////////////////
+//working with string part- 1
+const airline = 'TAP Air Dubai';
+const plane = 'B320';
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('A450'[0]);
+
+console.log(airline.length);
+console.log('A450'.length);
+
+console.log(airline.indexOf('A'));
+console.log(airline.lastIndexOf('A'));
+console.log(airline.indexOf('Dubai')); //case sensitive
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(0, airline.lastIndexOf(' ')));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  //B and E are middle seat
+  if (s === 'B' || s === 'E') {
+    console.log('You got the middle seat😁');
+  } else {
+    console.log('You are the lucky😎');
+  }
+};
+
+checkMiddleSeat('12B');
+checkMiddleSeat('12C');
+checkMiddleSeat('12E');
+*/
